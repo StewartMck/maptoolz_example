@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maptoolz</title>
+
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/maptoolz/dist/maptoolz.js"></script>
+    <script src="./index.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./map.css" />
+  </head>
+  <body>
+    <header>
+      <div class="links">
+        <a href="https://www.npmjs.com/package/maptoolz" target="_blank">NPM</a>
+        <a href="https://github.com/StewartMck/maptoolz" target="_blank"
+          >Github</a
+        >
+        <a href="http://www.smckinlay.ca" target="_blank">Stewart McKinlay</a>
+      </div>
+      <h1>Maptoolz</h1>
+    </header>
+
+    <div id="map">map</div>
+    <br />
+    <button id="clearPoints">CLEAR</button>
+
+    <div class="error">
+      <h3></h3>
+    </div>
+    <section class="convert">
+      <p>
+        Click on the map to place a marker. The marker's coordinates will be
+        converted into: Decimal Degrees (DEC), Degrees, Minutes, Seconds (DMS),
+        and Degrees, Decimal Minutes (DDM). The results will be displayed in the
+        table below. Clicking on a marker will delete it.
+      </p>
+      <table class="points">
+        <tr>
+          <th>Number</th>
+          <th>Decimal Degrees (DEC)</th>
+          <th>Degrees, Minutes, Seconds (DMS)</th>
+          <th>Degrees, Decimal Minutes (DDM)</th>
+        </tr>
+      </table>
+      <br />
+      <hr />
+      <h4>Functions From MapToolz:</h4>
+      <code
+        >const DEC = MapToolz.toDEC([lat, lng]);<br />
+        const DMS = MapToolz.toDMS([lat, lng]);<br />
+        const DDM = MapToolz.toDDM([lat, lng]);<br
+      /></code>
+    </section>
+    <br />
+    <section class="tools">
+      <p>
+        Measure Distance: Place two or more points on the map, select the unit
+        of measurement and click: <b>Measure Distance</b>.
+      </p>
+      <p>
+        Center Point: Place two or more points on the map. Click:
+        <b>Center Point</b>. The center point coordinates will be displayed in
+        the box and a marker will be placed on the map.
+      </p>
+      <p>
+        Sort Points: Place a starting point on the map. Click:
+        <b>Sort Points</b>. Five random points will be generated and placed as
+        markers on the map. The distances will be calculated and the results
+        sorted in ascending order in the table below.
+      </p>
+      <div>
+        <button class="button" id="distance">Measure Distance</button>
+        <select id="format_select">
+          Unit of Measurement
+          <option>km</option>
+          <option>m</option>
+          <option>nm</option>
+          <option>mi</option>
+        </select>
+        <input id="distance_output" type="text" disabled="true" />
+        <button class="button" id="getCenter">Center Point</button>
+        <input id="center_output" type="text" disabled="true" />
+      </div>
+      <br />
+      <button class="button" id="sortPoints">Sort Points</button>
+      <br />
+      <table class="sorted">
+        <tr>
+          <th>Points</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Distance</th>
+        </tr>
+      </table>
+      <br />
+      <hr />
+      <h4>Functions From MapToolz:</h4>
+      <code>
+        const distance = MapToolz.getDistance(MapToolz.toDEC(points),
+        format);<br />
+        const center = MapToolz.getCenterPoint(MapToolz.toDEC(points));<br />
+        const sorted = MapToolz.orderByDistance({ lat, long },
+        MapToolz.toDEC(points));<br />
+      </code>
+    </section>
+    <br />
+  </body>
+</html>

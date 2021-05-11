@@ -1,0 +1,200 @@
+body {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 2em;
+  padding-right: 2em;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  color: white;
+  background-color: rgba(8, 8, 8, 0.938);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+header h1 {
+  font-size: 2.5em;
+}
+
+.links {
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.links a {
+  color: white;
+}
+
+#map {
+  height: 580px;
+  width: 100%;
+  border-radius: 0.5em;
+}
+
+.convert {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid whitesmoke;
+  padding-bottom: 1em;
+  border-radius: 0.5em;
+}
+
+.convert p {
+  text-align: start;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.points {
+  width: 90%;
+  border: 1px solid whitesmoke;
+  border-radius: 0.5em;
+  font-size: 1em;
+}
+
+.tools {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid whitesmoke;
+  border-radius: 0.5em;
+  padding-bottom: 1em;
+  align-items: center;
+  text-align: center;
+}
+
+.sorted {
+  width: 90%;
+  border: 1px solid whitesmoke;
+  border-radius: 0.5em;
+  font-size: 1em;
+}
+
+.tools p {
+  text-align: start;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.error {
+  color: red;
+}
+
+#clearPoints {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 1em;
+  font-size: 1.5em;
+}
+
+#clearPoints:hover {
+  cursor: pointer;
+  font-size: 160%;
+}
+
+.button {
+  border-radius: 0.8em;
+  border: none;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.button:hover {
+  cursor: pointer;
+  font-size: 101%;
+}
+
+code {
+  text-align: center;
+}
+
+table {
+  background-color: white;
+  color: black;
+}
+
+table tr:first-child {
+  font-style: italic;
+}
+
+h4 {
+  font-family: monospace;
+}
+
+hr {
+  width: 90%;
+}
+
+input {
+  font-weight: bold;
+  color: black;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 0.2em;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  #clearPoints {
+    font-size: 0.8em;
+  }
+
+  #clearPoints:hover {
+    font-size: 105%;
+  }
+
+  .error {
+    font-size: 0.8em;
+  }
+
+  .convert p {
+    font-size: 0.8em;
+  }
+
+  .points {
+    font-size: 0.5em;
+  }
+
+  code {
+    font-size: 0.8em;
+  }
+
+  .tools {
+    font-size: 0.8em;
+  }
+
+  .sorted {
+    font-size: 0.8em;
+  }
+
+  .button {
+    font-size: 0.8em;
+  }
+
+  .button:hover {
+    font-size: 90%;
+  }
+
+  input {
+    font-size: 0.8em;
+    width: 40%;
+  }
+
+  select {
+    font-size: 0.8em;
+  }
+}
