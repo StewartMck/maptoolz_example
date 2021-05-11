@@ -148,7 +148,7 @@ input {
   text-align: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   #clearPoints {
     font-size: 0.8em;
   }
@@ -196,5 +196,9 @@ input {
 
   select {
     font-size: 0.8em;
+  }
+
+  .links{
+    width: 90%;
   }
 }
